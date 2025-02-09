@@ -1,6 +1,31 @@
 /* || = ou
-! = inverte valor booleano*/
+! = inverte valor booleano
 
+O operador ternário em JavaScript é uma forma concisa de escrever uma expressão condicional. Ele tem a seguinte sintaxe:
+  condição ? expressão1 : expressão2
+Se a condição for verdadeira, expressão1 será executada; caso contrário, expressão2 será executada.
+
+  Valores Falsy
+Em JavaScript, um valor é considerado falsy se for um dos seguintes:
+false
+0
+"" (string vazia)
+null
+undefined
+NaN
+
+  Valores Truthy
+Um valor é considerado truthy se não for um dos valores falsy.
+true
+42
+"0"
+"false"
+[1, 2, 3]
+
+  Operador lógico AND (&&)
+É um operador que retorna true se ambos os operandos forem verdadeiros; caso contrário, ele retorna false.
+
+*/
 let computerMove = '';
 let result = '';
 
