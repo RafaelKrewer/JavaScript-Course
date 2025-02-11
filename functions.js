@@ -1,32 +1,33 @@
 let computerMove = '';
 let result = '';
 
-
-document.getElementById('rock').onclick = function () {
+function pickComputerMove() {
   const randomNumber = Math.random();
+  if (randomNumber < 1 / 3) {
+    computerMove = 'rock';
+  } else if (randomNumber <= 2 / 3) {
+    computerMove = 'paper';
+  } else {
+    computerMove = 'scissors';
+  }
+}
 
-  computerMove = randomNumber < 1 / 3 ? 'Rock' : randomNumber <= 2 / 3 ? 'Paper' : 'Scissors';
-  result = computerMove === 'Rock' ? 'Draw' : computerMove === 'Paper' ? 'You lose' : 'You win';
+function playGame(playerMove) {
+  pickComputerMove();
+  if (computerMove === playerMove) {
+    result = 'Draw';
+  } else if (
+    (playerMove === 'rock' && computerMove === 'scissors') ||
+    (playerMove === 'paper' && computerMove === 'rock') ||
+    (playerMove === 'scissors' && computerMove === 'paper')
+  ) {
+    result = 'You win';
+  } else {
+    result = 'You lose';
+  }
+  document.getElementById('message').textContent = `You picked ${playerMove}. The computer picked ${computerMove}. ${result}`;
+}
 
-  document.getElementById('message').textContent = `You picked rock. The computer picked ${computerMove}. ${result}`;
-};
-
-
-document.getElementById('paper').onclick = function () {
-  const randomNumber = Math.random();
-
-  computerMove = randomNumber < 1 / 3 ? 'Rock' : randomNumber <= 2 / 3 ? 'Paper' : 'Scissors';
-  result = computerMove === 'Rock' ? 'You win' : computerMove === 'Paper' ? 'Draw' : 'You lose';
-
-  document.getElementById('message').textContent = `You picked paper. The computer picked ${computerMove}. ${result}`;
-};
-
-
-document.getElementById('scissors').onclick = function () {
-  const randomNumber = Math.random();
-
-  computerMove = randomNumber < 1 / 3 ? 'Rock' : randomNumber <= 2 / 3 ? 'Paper' : 'Scissors';
-  result = computerMove === 'Rock' ? 'You lose' : computerMove === 'Paper' ? 'You win' : 'Draw';
-
-  document.getElementById('message').textContent = `You picked scissors. The computer picked ${computerMove}. ${result}`;
-};
+document.getElementById('rock').onclick = () => playGame('rock');
+document.getElementById('paper').onclick = () => playGame('paper');
+document.getElementById('scissors').onclick = () => playGame('scissors');

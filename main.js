@@ -27,14 +27,18 @@ true
 
   Função: 
 
-function calculateTax(parameter1) {    
+function calculateTax(parameter1, parameter2) {    
   console.log(parameter1 * 0.1);
 
 calculateTax(1000);
                |
         |------|
         |
-o parâmetro 1 vai funcionar como uma variável, só que vai ir depois do nome da função. O 1000 pode ser alterado.
+o parâmetro 1 vai funcionar como uma variável, só que vai ir depois do nome da função. O calculateTax pode ser repetido com outro número, e o resultado será diferente. Também dá pra adicionar mais um parâmetro, como no exemplo abaixo:
+
+Ex:
+calculateTax(1000, 0.2);
+calculateTax(200);
   }
 
 */
