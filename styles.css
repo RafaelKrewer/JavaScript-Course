@@ -9,12 +9,21 @@ p {
 
 button {
   display: inline;
+  border-radius: 4px;
+  background-color: rgb(133, 133, 133);
 }
 
 body {
   background-color: rgba(11, 11, 11, 0.875);
 }
 
-button {
-  background-color: rgb(138, 138, 138);
+button:hover {
+  transition: 1s;
+  background-color: rgb(174, 174, 174);
+}
+
+#message {
+  background-color: rgb(174, 174, 174);
+  color: black;
+  border-radius: 4px;
 }
