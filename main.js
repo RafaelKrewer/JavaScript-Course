@@ -34,7 +34,7 @@ calculateTax(1000);
                |
         |------|
         |
-o parâmetro 1 vai funcionar como uma variável, só que vai ir depois do nome da função. O calculateTax pode ser repetido com outro número, e o resultado será diferente. Também dá pra adicionar mais um parâmetro, como no exemplo abaixo:
+o parâmetro 1 vai funcionar como uma variável, só que vai ir depois do nome da função. O calculateTax pode ser repetido com outro número, e o resultado será diferente. O Return serve para voltar para onde a função foi declarada. Também dá pra adicionar mais um parâmetro, como no exemplo abaixo:
 
 Ex:
 calculateTax(1000, 0.2);
