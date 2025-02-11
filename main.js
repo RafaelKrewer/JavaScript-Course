@@ -25,6 +25,18 @@ true
   Operador lógico AND (&&)
 É um operador que retorna true se ambos os operandos forem verdadeiros; caso contrário, ele retorna false.
 
+  Função: 
+
+function calculateTax(parameter1) {    
+  console.log(parameter1 * 0.1);
+
+calculateTax(1000);
+               |
+        |------|
+        |
+o parâmetro 1 vai funcionar como uma variável, só que vai ir depois do nome da função. O 1000 pode ser alterado.
+  }
+
 */
 let computerMove = '';
 let result = '';
