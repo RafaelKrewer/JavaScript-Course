@@ -13,9 +13,9 @@ console.log(produto);
 
     Agora com o novo valor, vai mostrar 'meia cinza'.
 
-  produto.newProperty = true; // Cria uma nova propriedade.
+  produto.propiedadeNova = true; // Cria uma nova propriedade.
 
-delete produto.newProperty; // Deleta a propriedade.
+delete produto.propriedadeNova; // Deleta a propriedade.
 
   Dá pra botar no objeto uma array (lista):
   const produto = {
@@ -23,6 +23,10 @@ delete produto.newProperty; // Deleta a propriedade.
     preço: 10, 
     tamanho: ['P', 'M', 'G'] - array com 3 elementos. Arrays começam com [].
   };
+
+
+  document.querySelector é usado para selecionar o primeiro elemento que corresponde a um seletor CSS especificado.
+
 */
 
 let computerMove = '';
