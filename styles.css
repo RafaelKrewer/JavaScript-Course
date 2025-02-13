@@ -23,7 +23,10 @@ button:hover {
 }
 
 #message {
+  
   background-color: rgb(174, 174, 174);
   color: black;
   border-radius: 4px;
+  max-width: fit-content;
+  padding: 0px 4px;
 }
