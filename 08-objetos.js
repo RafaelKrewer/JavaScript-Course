@@ -16,6 +16,13 @@ console.log(produto);
   produto.newProperty = true; // Cria uma nova propriedade.
 
 delete produto.newProperty; // Deleta a propriedade.
+
+  Dá pra botar no objeto uma array (lista):
+  const produto = {
+    nome: 'meia',
+    preço: 10, 
+    tamanho: ['P', 'M', 'G'] - array com 3 elementos. Arrays começam com [].
+  };
 */
 
 let computerMove = '';
