@@ -30,6 +30,13 @@ delete produto.propriedadeNova; // Deleta a propriedade.
 
 let computerMove = '';
 let result = '';
+ 
+const score = 
+{
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
 
 // Função para o botão "rock"
 document.getElementById('rock').onclick = function () {
