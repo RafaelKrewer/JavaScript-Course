@@ -26,89 +26,75 @@ delete produto.propriedadeNova; // Deleta a propriedade.
 
   document.querySelector é usado para selecionar o primeiro elemento que corresponde a um seletor CSS especificado.
 
+  score.wins++; // Adiciona 1 ao valor de wins.
+
+  score.wins = score.wins + 1; // Adiciona 1 ao valor de wins.
+  score.wins += 1; // Adiciona 1 ao valor de wins. (Mesma coisa que o de cima, só que menor.)
 */
 
 let computerMove = '';
 let result = '';
+let score = {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
 
-// Função para o botão "rock"
+function pickComputerMove() {
+  const randomNumber = Math.random();
+  if (randomNumber < 1 / 3) {
+    computerMove = 'rock';
+  } else if (randomNumber <= 2 / 3) {
+    computerMove = 'paper';
+  } else {
+    computerMove = 'scissors';
+  }
+}
+
 document.getElementById('rock').onclick = function () {
-  // Gera um número aleatório entre 0 e 1
-  const randomNumber = Math.random();
-
-  // Define a jogada do computador com base no número aleatório
-  if (randomNumber < 1 / 3) {
-    computerMove = 'Rock';
-  } else if (randomNumber <= 2 / 3) {
-    computerMove = 'Paper';
-  } else {
-    computerMove = 'Scissors';
-  }
-
-  // Define o resultado do jogo com base na jogada do computador
-  if (computerMove === 'Rock') {
+  pickComputerMove();
+  if (computerMove === 'rock') {
     result = 'Draw';
-  } else if (computerMove === 'Paper') {
+    score.ties++;
+  } else if (computerMove === 'paper') {
     result = 'You lose';
+    score.losses++;
   } else {
     result = 'You win';
+    score.wins++;
   }
+  document.getElementById('message').textContent = `You picked rock. The computer picked ${computerMove}. ${result}. Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
-  // Exibe a mensagem com a jogada do jogador, a jogada do computador e o resultado
-  document.getElementById('message').textContent = `You picked rock. The computer picked ${computerMove}. ${result}`;
 };
 
-// Função para o botão "paper"
 document.getElementById('paper').onclick = function () {
-  // Gera um número aleatório entre 0 e 1
-  const randomNumber = Math.random();
-
-  // Define a jogada do computador com base no número aleatório
-  if (randomNumber < 1 / 3) {
-    computerMove = 'Rock';
-  } else if (randomNumber <= 2 / 3) {
-    computerMove = 'Paper';
-  } else {
-    computerMove = 'Scissors';
-  }
-
-  // Define o resultado do jogo com base na jogada do computador
-  if (computerMove === 'Rock') {
+  pickComputerMove();
+  if (computerMove === 'rock') {
     result = 'You win';
-  } else if (computerMove === 'Paper') {
+    score.wins++;
+  } else if (computerMove === 'paper') {
     result = 'Draw';
+    score.ties++;
   } else {
     result = 'You lose';
+    score.losses++;
   }
+  document.getElementById('message').textContent = `You picked paper. The computer picked ${computerMove}. ${result}.Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
-  // Exibe a mensagem com a jogada do jogador, a jogada do computador e o resultado
-  document.getElementById('message').textContent = `You picked paper. The computer picked ${computerMove}. ${result}`;
 };
 
-// Função para o botão "scissors"
 document.getElementById('scissors').onclick = function () {
-  // Gera um número aleatório entre 0 e 1
-  const randomNumber = Math.random();
-
-  // Define a jogada do computador com base no número aleatório
-  if (randomNumber < 1 / 3) {
-    computerMove = 'Rock';
-  } else if (randomNumber <= 2 / 3) {
-    computerMove = 'Paper';
-  } else {
-    computerMove = 'Scissors';
-  }
-
-  // Define o resultado do jogo com base na jogada do computador
-  if (computerMove === 'Rock') {
+  pickComputerMove();
+  if (computerMove === 'rock') {
     result = 'You lose';
-  } else if (computerMove === 'Paper') {
+    score.losses++;
+  } else if (computerMove === 'paper') {
     result = 'You win';
+    score.wins++;
   } else {
     result = 'Draw';
+    score.ties++;
   }
-
-  // Exibe a mensagem com a jogada do jogador, a jogada do computador e o resultado
-  document.getElementById('message').textContent = `You picked scissors. The computer picked ${computerMove}. ${result}`;
+  document.getElementById('message').textContent = `You picked scissors. The computer picked ${computerMove}. ${result}. Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 };
 
