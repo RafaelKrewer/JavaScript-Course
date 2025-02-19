@@ -51,6 +51,8 @@ function pickComputerMove() {
   }
 }
 
+
+
 document.getElementById('rock').onclick = function () {
   pickComputerMove();
   if (computerMove === 'rock') {
@@ -63,8 +65,8 @@ document.getElementById('rock').onclick = function () {
     result = 'You win';
     score.wins++;
   }
-  document.getElementById('message').textContent = `You picked rock. The computer picked ${computerMove}. ${result}. Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-
+  alert(`You picked rock. The computer picked ${computerMove}. ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
 };
 
 document.getElementById('paper').onclick = function () {
@@ -79,7 +81,8 @@ document.getElementById('paper').onclick = function () {
     result = 'You lose';
     score.losses++;
   }
-  document.getElementById('message').textContent = `You picked paper. The computer picked ${computerMove}. ${result}.Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+  alert(`You picked paper. The computer picked ${computerMove}. ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
 
 };
 
@@ -95,6 +98,13 @@ document.getElementById('scissors').onclick = function () {
     result = 'Draw';
     score.ties++;
   }
-  document.getElementById('message').textContent = `You picked scissors. The computer picked ${computerMove}. ${result}. Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+  alert(`You picked scissors. The computer picked ${computerMove}. ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
 };
 
+document.getElementById('score').onclick = function () {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  alert('Score has been reset');
+}
