@@ -53,7 +53,6 @@ delete produto.propriedadeNova; // Deleta a propriedade.
 
   object + function = method
 
-
   
   Manipulação de JSON em JavaScript
 Serialização: Converter um objeto JavaScript em uma string JSON usando JSON.stringify().
@@ -64,17 +63,54 @@ Desserialização: Converter uma string JSON em um objeto JavaScript usando JSON
 const jsonString = '{"wins":0,"losses":0,"ties":0}';
 const score = JSON.parse(jsonString);
 
-JSON é uma ferramenta poderosa e versátil para trabalhar com dados estruturados em aplicações web e além.
+
+Objetos: 
+let obj1 = { nome: 'meia', preço: 10 };
+let obj2 = obj1; // obj2 referencia o mesmo objeto que obj1
+
+obj2.preço = 20;
+console.log(obj1.preço); // Mostra 20, pois obj1 e obj2 referenciam o mesmo objeto
+
+
+Destructuring: 
+const obj = { nome: 'meia', preço: 10 };
+const { nome, preço } = obj;
+
+console.log(nome); // 'meia'
+console.log(preço); // 10
+
+
+Propriedade abreviada:
+Sem abreviação:
+const produto = {
+  nome: nome,
+  preço: preço
+};
+
+Com abreviação:
+const produto = {
+  nome,
+  preço
+};
+
+Método Abreviado:
+  Sem abreviação:
+    mostrarProduto: function() {
+        console.log(`Nome: ${this.nome}, Preço: ${this.preço}`);
+    }
+  
+    Com abreviação:
+    mostrarProduto() {
+        console.log(`Nome: ${this.nome}, Preço: ${this.preço}`);
 */
 
 let computerMove = '';
 let result = '';
 let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 }; // Vai pegar o score que está no localStorage ou criar um novo objeto com wins, losses e ties.
 
-if(score === null) {
+/* if (!score) {
   score = { wins: 0, losses: 0, ties: 0 };
-
-}
+} */
 
 function pickComputerMove() {
   const randomNumber = Math.random();
@@ -129,7 +165,6 @@ document.getElementById('paper').onclick = function () {
   }
   alert(`You picked paper. The computer picked ${computerMove}. ${result}. 
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
-
 };
 
 document.getElementById('scissors').onclick = function () {
