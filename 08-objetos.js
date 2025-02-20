@@ -30,6 +30,28 @@ delete produto.propriedadeNova; // Deleta a propriedade.
 
   score.wins = score.wins + 1; // Adiciona 1 ao valor de wins.
   score.wins += 1; // Adiciona 1 ao valor de wins. (Mesma coisa que o de cima, só que menor.)
+
+  const produto1 = {
+    nome: 'meia',
+    preço: 10,
+    ['outra-coisa']: 'teste',
+    avaliação: {     // Objeto aninhado dentro de objeto.
+      nota: 5,
+      número: 115;
+    } 
+      função: function função1() {
+      console.log('teste');
+    }
+      };
+
+  console.log(produto1.nome); // Vai mostrar 'meia'.
+  console.log(produto1['nome']); // Vai mostrar 'meia'. (Outra forma de acessar o valor da propriedade.)
+  console.log(produto1['outra-coisa']); // Vai mostrar 'teste'. Com parênteses pode usar o -, com . ele vai achar que é um menos.
+
+  console.log(produto1.avaliação.nota); // Vai mostrar 5.
+  console.log.função()
+
+  object + function = method
 */
 
 let computerMove = '';
@@ -51,7 +73,12 @@ function pickComputerMove() {
   }
 }
 
-
+document.getElementById('score').onclick = function () {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  alert('Score has been reset');
+}
 
 document.getElementById('rock').onclick = function () {
   pickComputerMove();
@@ -101,10 +128,3 @@ document.getElementById('scissors').onclick = function () {
   alert(`You picked scissors. The computer picked ${computerMove}. ${result}. 
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
 };
-
-document.getElementById('score').onclick = function () {
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
-  alert('Score has been reset');
-}
