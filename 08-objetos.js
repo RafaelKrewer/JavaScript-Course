@@ -52,15 +52,29 @@ delete produto.propriedadeNova; // Deleta a propriedade.
   console.log.função()
 
   object + function = method
+
+
+  
+  Manipulação de JSON em JavaScript
+Serialização: Converter um objeto JavaScript em uma string JSON usando JSON.stringify().
+const score = { wins: 0, losses: 0, ties: 0 };
+const jsonString = JSON.stringify(score);
+
+Desserialização: Converter uma string JSON em um objeto JavaScript usando JSON.parse().
+const jsonString = '{"wins":0,"losses":0,"ties":0}';
+const score = JSON.parse(jsonString);
+
+JSON é uma ferramenta poderosa e versátil para trabalhar com dados estruturados em aplicações web e além.
 */
 
 let computerMove = '';
 let result = '';
-let score = {
-  wins: 0,
-  losses: 0,
-  ties: 0
-};
+let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 }; // Vai pegar o score que está no localStorage ou criar um novo objeto com wins, losses e ties.
+
+if(score === null) {
+  score = { wins: 0, losses: 0, ties: 0 };
+
+}
 
 function pickComputerMove() {
   const randomNumber = Math.random();
@@ -78,6 +92,8 @@ document.getElementById('score').onclick = function () {
   score.losses = 0;
   score.ties = 0;
   alert('Score has been reset');
+
+  localStorage.removeItem('score');
 }
 
 document.getElementById('rock').onclick = function () {
@@ -92,6 +108,9 @@ document.getElementById('rock').onclick = function () {
     result = 'You win';
     score.wins++;
   }
+
+  localStorage.setItem('score', JSON.stringify(score));
+
   alert(`You picked rock. The computer picked ${computerMove}. ${result}. 
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
 };
