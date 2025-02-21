@@ -1,5 +1,5 @@
 /*
-// Exercício 1: Funções
+// Exercício 1: Funções, 6j
 let randomNumber = Math.random();
 let result = '';
 let guess = 'Heads';
