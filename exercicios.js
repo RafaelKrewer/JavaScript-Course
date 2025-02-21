@@ -43,12 +43,12 @@ let basketball = {
 
 basketball.price = 2595;
 console.log(basketball);
-*/
+
 
 // 8d
 let product1 = {
   name: 'Bottle',
-  price: 15,
+  price: 30,
 }
 
 let product2 = {
@@ -65,3 +65,37 @@ function comparePrice(product1, product2) {
 }
 
 console.log(comparePrice(product1, product2));
+
+
+// 8e
+let product1 = {
+  name: 'Bottle',
+  price: 30,
+}
+
+let product2 = {
+  name: 'Bottle',
+  price: 30,
+}
+
+function compareProducts(product1, product2) {
+  if (product1.name === product2.name && product1.price === product2.price) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(compareProducts(product1, product2));
+
+
+// 8f
+
+const string = 'Olá, Mundo! ';
+
+console.log(string + 'em letras minúsculas é ' + string.toLowerCase()
+  + 'e em letras maiúsculas é ' + string.toUpperCase());
+
+console.log(string.repeat(2)); 
+*/
+
