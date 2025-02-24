@@ -67,4 +67,3 @@ document.getElementById('scissors').onclick =
     }
     alert(`You picked scissors. The computer picked ${computerMove}. ${result}`);
   };
-
