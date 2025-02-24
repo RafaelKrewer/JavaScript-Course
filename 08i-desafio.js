@@ -1,14 +1,35 @@
-let randomNumber = Math.random();
-let result = '';
-let guess = 'Heads';
+document.addEventListener('DOMContentLoaded', function () {
+  let result = '';
+  let guess = 'Heads';
+  let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
 
-document.getElementById('cara').onclick = function () {
-  randomNumber < 0.5 ? result = 'Heads' : result = 'Tails';
-  guess === result ? console.log('You win! Computer said: ' + result) : console.log('You lose! Computer said: ' + result);
-}
+  document.getElementById('heads').onclick = function () {
+    let randomNumber = Math.random();
+    randomNumber < 0.5 ? result = 'Heads' : result = 'Tails';
+    if (guess === result) {
+      score.wins++;
+      alert(`You win! Computer said: ${result} 
+Wins: ${score.wins}, Losses: ${score.losses}`); 
+    } else {
+      score.losses++;
+      alert(`You lose! Computer said: ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+    localStorage.setItem('score', JSON.stringify(score));
+  };
 
-if (guess === result) {
-  console.log('You win! Computer said: ' + result);
-} else {
-  console.log('You lose! Computer said: ' + result);
-}
+  document.getElementById('tails').onclick = function () {
+    let randomNumber = Math.random();
+    randomNumber < 0.5 ? result = 'Heads' : result = 'Tails';
+    if (guess === result) {
+      score.wins++;
+      alert(`You lose! Computer said: ${result} 
+Wins: ${score.wins}, Losses: ${score.losses}`); 
+    } else {
+      score.losses++;
+      alert(`You win! Computer said: ${result}. 
+Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+    localStorage.setItem('score', JSON.stringify(score));
+  };
+});
