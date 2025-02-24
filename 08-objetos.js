@@ -1,4 +1,6 @@
 /*
+  Anotações:
+
 const produto = {
     (propriedade)nome: 'meia',
 (propriedade também) preço: 10
