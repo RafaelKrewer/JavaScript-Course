@@ -26,7 +26,6 @@ delete produto.propriedadeNova; // Deleta a propriedade.
     tamanho: ['P', 'M', 'G'] - array com 3 elementos. Arrays começam com [].
   };
 
-  document.querySelector é usado para selecionar o primeiro elemento que corresponde a um seletor CSS especificado.
 
   score.wins++; // Adiciona 1 ao valor de wins.
 
