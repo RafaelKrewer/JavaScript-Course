@@ -15,7 +15,7 @@ console.log(produto);
 
     Agora com o novo valor, vai mostrar 'meia cinza'.
 
-  produto.propiedadeNova = true; // Cria uma nova propriedade.
+  produto.propriedadeNova = true; // Cria uma nova propriedade.
 
 delete produto.propriedadeNova; // Deleta a propriedade.
 
