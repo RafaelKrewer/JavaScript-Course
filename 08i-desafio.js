@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (guess === result) {
       score.wins++;
       alert(`You win! Computer said: ${result} 
-Wins: ${score.wins}, Losses: ${score.losses}`); 
+Wins: ${score.wins}, Losses: ${score.losses}`);
     } else {
       score.losses++;
       alert(`You lose! Computer said: ${result}. 
@@ -24,7 +24,7 @@ Wins: ${score.wins}, Losses: ${score.losses}`);
     if (guess === result) {
       score.wins++;
       alert(`You lose! Computer said: ${result} 
-Wins: ${score.wins}, Losses: ${score.losses}`); 
+Wins: ${score.wins}, Losses: ${score.losses}`);
     } else {
       score.losses++;
       alert(`You win! Computer said: ${result}. 
@@ -33,3 +33,10 @@ Wins: ${score.wins}, Losses: ${score.losses}`);
     localStorage.setItem('score', JSON.stringify(score));
   };
 });
+
+let um = 1;
+let dois = 2;
+let tres = 3;
+let quatro = 4;
+let cinco = 5;
+let seis = 6;
