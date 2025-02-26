@@ -11,4 +11,11 @@ DOM: Document Object Model
 
   */
 
-  document.querySelector()
+console.log(document.querySelector('button')
+  .innerHTML);
+document.querySelector('button')
+  .innerHTML = 'changed';
+
+const buttonElem = document.querySelector('.js-button');
+
+console.log(buttonElem)
