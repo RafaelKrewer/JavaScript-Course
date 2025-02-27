@@ -1,6 +1,10 @@
 let computerMove = '';
 let result = '';
-let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 }; // Vai pegar o score que está no localStorage ou criar um novo objeto com wins, losses e ties.
+let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
+
+function updateScore() {
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+}
 
 function pickComputerMove() {
   const randomNumber = Math.random();
@@ -13,7 +17,8 @@ function pickComputerMove() {
   }
 }
 
-document.getElementById('score').onclick = function () {
+document.getElementById('resetScore').onclick = function () {
+
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
@@ -37,8 +42,8 @@ document.getElementById('rock').onclick = function () {
 
   localStorage.setItem('score', JSON.stringify(score));
 
-  alert(`You picked rock. The computer picked ${computerMove}. ${result}. 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+  alert(`You picked rock. The computer picked ${computerMove}. ${result}.`);
+  updateScore();
 };
 
 document.getElementById('paper').onclick = function () {
@@ -53,8 +58,8 @@ document.getElementById('paper').onclick = function () {
     result = 'You lose';
     score.losses++;
   }
-  alert(`You picked paper. The computer picked ${computerMove}. ${result}. 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+  alert(`You picked paper. The computer picked ${computerMove}. ${result}.`);
+  updateScore();
 };
 
 document.getElementById('scissors').onclick = function () {
@@ -69,6 +74,6 @@ document.getElementById('scissors').onclick = function () {
     result = 'Draw';
     score.ties++;
   }
-  alert(`You picked scissors. The computer picked ${computerMove}. ${result}. 
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+  alert(`You picked scissors. The computer picked ${computerMove}. ${result}.`);
+  updateScore();
 };
