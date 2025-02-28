@@ -3,7 +3,7 @@ let result = '';
 let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
 
 function updateScore() {
-  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+  document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
 
 function pickComputerMove() {
@@ -18,16 +18,16 @@ function pickComputerMove() {
 }
 
 document.getElementById('resetScore').onclick = function () {
-
   score.wins = 0;
   score.losses = 0;
   score.ties = 0;
-  alert('Score has been reset');
 
   localStorage.removeItem('score');
+  updateScore();
 }
 
 document.getElementById('rock').onclick = function () {
+  const playerMove = 'rock';
   pickComputerMove();
   if (computerMove === 'rock') {
     result = 'Draw';
@@ -41,12 +41,14 @@ document.getElementById('rock').onclick = function () {
   }
 
   localStorage.setItem('score', JSON.stringify(score));
-
-  alert(`You picked rock. The computer picked ${computerMove}. ${result}.`);
   updateScore();
+
+  document.querySelector('.js-result').innerHTML = result;
+  document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
 };
 
 document.getElementById('paper').onclick = function () {
+  const playerMove = 'paper';
   pickComputerMove();
   if (computerMove === 'rock') {
     result = 'You win';
@@ -58,11 +60,16 @@ document.getElementById('paper').onclick = function () {
     result = 'You lose';
     score.losses++;
   }
-  alert(`You picked paper. The computer picked ${computerMove}. ${result}.`);
+
+  localStorage.setItem('score', JSON.stringify(score));
   updateScore();
+
+  document.querySelector('.js-result').innerHTML = result;
+  document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
 };
 
 document.getElementById('scissors').onclick = function () {
+  const playerMove = 'scissors';
   pickComputerMove();
   if (computerMove === 'rock') {
     result = 'You lose';
@@ -74,6 +81,12 @@ document.getElementById('scissors').onclick = function () {
     result = 'Draw';
     score.ties++;
   }
-  alert(`You picked scissors. The computer picked ${computerMove}. ${result}.`);
+
+  localStorage.setItem('score', JSON.stringify(score));
   updateScore();
+
+  document.querySelector('.js-result').innerHTML = result;
+  document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
 };
+
+updateScore();
