@@ -3,7 +3,7 @@
 }
 
 h1 {
-  display: inline;
+  display: block;
   color: rgb(215, 215, 215);
 }
 
@@ -27,6 +27,7 @@ button:hover {
 }
 
 #message {
+  display: block;
   background-color: rgb(174, 174, 174);
   color: black;
   border-radius: 4px;
