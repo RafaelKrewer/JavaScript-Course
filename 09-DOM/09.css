@@ -1,0 +1,36 @@
+* {
+  margin: 6px;
+}
+
+h1 {
+  display: block;
+  color: rgb(215, 215, 215);
+}
+
+p {
+  color: rgb(215, 215, 215);
+}
+
+button {
+  display: flex;
+  border-radius: 4px;
+  background-color: rgb(133, 133, 133);
+}
+
+body {
+  background-color: rgba(11, 11, 11, 0.875);
+}
+
+button:hover {
+  transition: 1s;
+  background-color: rgb(174, 174, 174);
+}
+
+#message {
+  display: block;
+  background-color: rgb(174, 174, 174);
+  color: black;
+  border-radius: 4px;
+  max-width: fit-content;
+  padding: 0px 4px;
+}
