@@ -1,24 +1,87 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
 #calculator {
   font-family: Arial, sans-serif;
-  background-color: rgb(163, 163, 163);
+  background-color: rgb(132, 132, 132);
   border-radius: 5px;
   max-width: 300px;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  overflow: hidden;
+  border: rgb(9, 9, 9) 5px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+#display {
+  width: 90%; /* Ocupa 90% da largura do contêiner */
+  font-size: 32px;
+  text-align: right;
+  border: none;
+  background-color: rgb(209, 209, 209);
+  color: rgb(79, 68, 68);
+  margin: 10px 0; /* Adiciona margem vertical */
+  padding: 10px; /* Adiciona padding interno */
 }
 
 #keys {
   display: grid;
   gap: 6px;
   grid-template-columns: repeat(4, 1fr);
-  padding: 15px;
+  padding: 5px;
+  width: 90%; /* Ocupa 90% da largura do contêiner */
 }
 
 button {
-  width: 60px;
+  width: 100%; /* Ocupa 100% da largura da célula da grade */
   height: 60px;
   border-radius: 50px;
-  border: none;
-  background-color: rgb(185, 185, 185);
-  color: rgb(12, 12, 12);  
+  border: 1px solid rgb(9, 9, 9);
+  background-color: rgb(191, 191, 191);
+  color: rgb(12, 12, 12);
   font-size: 32px;
   font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(158, 158, 158);
+}
+
+button:active {
+  background-color: rgb(145, 145, 145);
+}
+
+button.operator {
+  background-color: rgb(255, 159, 67);
+  color: white;
+}
+
+button.operator:hover {
+  background-color: rgb(255, 139, 67);
+}
+
+button.operator:active {
+  background-color: rgb(255, 119, 67);
+}
+
+button.empty:hover {
+  background-color: rgb(177, 177, 177);
+  color: rgb(0, 0, 0);
+}
+
+button.empty {
+  background-color: rgb(222, 222, 222);
+  color: rgb(0, 0, 0);
+}
+
+button.empty:active {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
