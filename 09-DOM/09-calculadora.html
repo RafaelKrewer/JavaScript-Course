@@ -9,9 +9,12 @@
 <body>
   <div id="calculator">
     <input id="display" type="text" readonly>
+    
     <div id="keys">
       <button class="clear" onclick="clearDisplay()">C</button>
-      <button class="empty" style="grid-column: span 2;"></button>
+      <div class="empty" style="grid-column: span 2;">
+        <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
+      </div>
       <button class="operator" onclick="appendToDisplay('/')">/</button>
 
       <button class="number" onclick="appendToDisplay('7')">7</button>

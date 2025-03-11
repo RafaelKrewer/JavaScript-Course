@@ -5,12 +5,18 @@ body {
   align-items: center;
   height: 100vh;
   background-color: rgb(255, 255, 255);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 #calculator {
   font-family: Arial, sans-serif;
   background-color: rgb(132, 132, 132);
-  border-radius: 5px;
+  border-radius: 15px;
   max-width: 300px;
   width: 100%; /* Ocupa 100% da largura disponível */
   overflow: hidden;
@@ -20,6 +26,11 @@ body {
   align-items: center; /* Centraliza os itens horizontalmente */
 }
 
+#calculator.dark-mode {
+  background-color: rgb(50, 50, 50);
+  border: rgb(255, 255, 255) 5px solid;
+}
+
 #display {
   width: 90%; /* Ocupa 90% da largura do contêiner */
   font-size: 32px;
@@ -27,8 +38,13 @@ body {
   border: none;
   background-color: rgb(209, 209, 209);
   color: rgb(79, 68, 68);
-  margin: 10px 0; /* Adiciona margem vertical */
+  margin: 5px 0; /* Adiciona margem vertical */
   padding: 10px; /* Adiciona padding interno */
+}
+
+#display.dark-mode {
+  background-color: rgb(100, 100, 100);
+  color: rgb(255, 255, 255);
 }
 
 #keys {
@@ -48,6 +64,12 @@ button {
   color: rgb(12, 12, 12);
   font-size: 32px;
   font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.dark-mode {
+  background-color: rgb(100, 100, 100);
+  color: rgb(255, 255, 255);
 }
 
 button:hover {
@@ -84,4 +106,15 @@ button.empty {
 button.empty:active {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
+}
+
+.botao.modo {
+  cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.botao.modo.dark-mode {
+  color: rgb(255, 255, 255);
 }
